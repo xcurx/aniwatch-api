@@ -150,7 +150,13 @@ Deploy your own instance of Aniwatch API on Render.
 
 The endpoints exposed by the api are listed below with examples that uses the [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), but you can use any http library.
 
+<details>
+
+<summary>
+
 ### `GET` Anime Home Page
+
+</summary>
 
 #### Endpoint
 
@@ -176,9 +182,7 @@ console.log(data);
       id: string,
       name: string,
       poster: string,
-      duration: string,
       type: string,
-      rating: string,
       episodes: {
         sub: number,
         dub: number,
@@ -252,13 +256,60 @@ console.log(data);
     },
     {...},
   ],
+  mostPopularAnimes: [
+    {
+      id: string,
+      name: string,
+      poster: string,
+      type: string,
+      episodes: {
+        sub: number,
+        dub: number,
+      }
+    },
+    {...},
+  ],
+  mostFavoriteAnimes: [
+    {
+      id: string,
+      name: string,
+      poster: string,
+      type: string,
+      episodes: {
+        sub: number,
+        dub: number,
+      }
+    },
+    {...},
+  ],
+  latestCompletedAnimes: [
+    {
+      id: string,
+      name: string,
+      poster: string,
+      type: string,
+      episodes: {
+        sub: number,
+        dub: number,
+      }
+    },
+    {...},
+  ],
 }
 
 ```
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Anime About Info
+
+</summary>
 
 #### Endpoint
 
@@ -396,7 +447,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Search Results
+
+</summary>
 
 #### Endpoint
 
@@ -493,7 +552,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Search Suggestions
+
+</summary>
 
 #### Endpoint
 
@@ -536,7 +603,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Producer Animes
+
+</summary>
 
 #### Endpoint
 
@@ -625,7 +700,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Genre Animes
+
+</summary>
 
 #### Endpoint
 
@@ -698,7 +781,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Category Anime
+
+</summary>
 
 #### Endpoint
 
@@ -774,7 +865,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Estimated Schedules
+
+</summary>
 
 #### Endpoint
 
@@ -808,6 +907,8 @@ console.log(data);
       time: string, // 24 hours format
       name: string,
       jname: string,
+      airingTimestamp: number,
+      secondsUntilAiring: number
     },
     {...}
   ]
@@ -816,7 +917,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Anime Episodes
+
+</summary>
 
 #### Endpoint
 
@@ -859,7 +968,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Anime Episode Servers
+
+</summary>
 
 #### Endpoint
 
@@ -915,7 +1032,15 @@ console.log(data);
 
 [🔼 Back to Top](#table-of-contents)
 
+</details>
+
+<details>
+
+<summary>
+
 ### `GET` Anime Episode Streaming Links
+
+</summary>
 
 #### Endpoint
 
@@ -971,6 +1096,8 @@ console.log(data);
 ```
 
 [🔼 Back to Top](#table-of-contents)
+
+</details>
 
 ## <span id="development">👨‍💻 Development</span>
 

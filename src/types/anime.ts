@@ -1,6 +1,7 @@
 export interface Anime {
   id: string | null;
   name: string | null;
+  jname: string | null;
   poster: string | null;
   duration: string | null;
   type: string | null;
@@ -15,6 +16,7 @@ type CommonAnimeProps = "id" | "name" | "poster";
 
 export interface Top10Anime extends Pick<Anime, CommonAnimeProps | "episodes"> {
   rank: number | null;
+  jname: string | null;
 }
 
 export type Top10AnimeTimePeriod = "day" | "week" | "month";
@@ -39,6 +41,8 @@ export interface LatestEpisodeAnime extends Anime {}
 export interface TopUpcomingAnime extends Anime {}
 
 export interface TopAiringAnime extends MostPopularAnime {}
+export interface MostFavoriteAnime extends MostPopularAnime {}
+export interface LatestCompletedAnime extends MostPopularAnime {}
 
 export interface AnimeGeneralAboutInfo
   extends Pick<Anime, CommonAnimeProps>,
@@ -114,18 +118,18 @@ export type AnimeCategories =
   | "completed";
 
 export type AnimeServers =
-  | "vidstreaming"
+  | "hd-1"
+  | "hd-2"
   | "megacloud"
   | "streamsb"
-  | "streamtape"
-  | "vidcloud";
+  | "streamtape";
 
 export enum Servers {
-  VidStreaming = "vidstreaming",
+  VidStreaming = "hd-1",
   MegaCloud = "megacloud",
   StreamSB = "streamsb",
   StreamTape = "streamtape",
-  VidCloud = "vidcloud",
+  VidCloud = "hd-2",
   AsianLoad = "asianload",
   GogoCDN = "gogocdn",
   MixDrop = "mixdrop",
