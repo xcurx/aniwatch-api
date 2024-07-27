@@ -3,6 +3,7 @@ import morgan from "morgan";
 import express from "express";
 import { resolve } from "path";
 import { config } from "dotenv";
+import cors from 'cors'
 
 import corsConfig from "./config/cors.js";
 import { ratelimit } from "./config/ratelimit.js";
@@ -32,6 +33,13 @@ app.use("/anime", animeRouter);
 
 app.use(notFoundHandler);
 app.use(errorHandler);
+
+const corsOptions = {
+  origin: 'https://anime-website-three-ebon.vercel.app',
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 // NOTE: this env is "required" for vercel deployments
 if (!Boolean(process?.env?.IS_VERCEL_DEPLOYMENT)) {
